@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="container text-center">
+    <div *ngIf="false;else noData">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noData>
+        <div class="content">
+            <span class="loader"></span>
+        </div>
+    </ng-template>
+</div>

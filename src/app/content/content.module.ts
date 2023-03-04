@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HomeComponent } from './components/home/home.component';
+import { CharacterComponent } from './components/character/character.component';
+import { EpisodesComponent } from './components/episodes/episodes.component';
 import { ContentRoutingModule } from './content-routing.module';
-import { SharedModule } from '../shared/shared.module';
+
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent,
+    CharacterComponent,
+    EpisodesComponent
+  ],
   imports: [
     CommonModule,
-    ContentRoutingModule,
-    SharedModule
+    ContentRoutingModule
   ]
 })
 export class ContentModule { }
