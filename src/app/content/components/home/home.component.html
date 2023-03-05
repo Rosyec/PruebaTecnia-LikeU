@@ -1,16 +1,26 @@
 <div class="container text-center">
-    <div *ngIf="false;else noData">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    
-                </div>
-            </div>
+  <div *ngIf="characters; else noData">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let actual of characters">
+        <div class="card" (click)="viewInfo(actual.id)">
+          <img [src]="actual.image" alt="" />
+          <span> {{ actual.name }} </span>
         </div>
+      </div>
     </div>
-    <ng-template #noData>
-        <div class="content">
-            <span class="loader"></span>
-        </div>
-    </ng-template>
+
+    <div class="col d-flex justify-content-center my-5">
+      <button (click)="onPrev()">Anterior</button>
+      <span>Pagina {{ current }} </span>
+      &nbsp;
+      <span> de {{ end }} </span>
+      <button (click)="onNext()">Siguiente</button>
+  </div>
+
+  </div>
+  <ng-template #noData>
+    <div class="content">
+      <span class="loader"></span>
+    </div>
+  </ng-template>
 </div>

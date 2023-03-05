@@ -1,1 +1,49 @@
-<p>character works!</p>
+<div class="container text-center">
+  <div *ngIf="character.id !== 0; else noData">
+    <div class="row">
+      <div class="col-8">
+        <div class="card">
+          <img class="card-img-top" [src]="character.image" alt="image" />
+          <h3>Información</h3>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Especie</th>
+                  <th scope="col">Género</th>
+                  <th scope="col">Locación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ character.name }}</td>
+                  <td>{{ character.status }}</td>
+                  <td>{{ character.species }}</td>
+                  <td>{{ character.gender }}</td>
+                  <td>{{ character.location.name }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="episodes">
+            <ul class="list-group">
+              <li
+                class="list-group-item"
+                *ngFor="let episode of character.episode"
+              >
+                <a (click)="onClickEpisode(episode)"> {{ episode }} </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <div class="content">
+      <span class="loader"></span>
+    </div>
+  </ng-template>
+</div>

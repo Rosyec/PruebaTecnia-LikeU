@@ -46,3 +46,37 @@ export enum Status {
     Dead = "Dead",
     Unknown = "unknown",
 }
+export interface Episode {
+    id:         number;
+    name:       string;
+    air_date:   string;
+    episode:    string;
+    characters: string[];
+    url:        string;
+    created:    string;
+}
+
+export const dataCharacter: Result = {
+    id: 0,
+    name: '',
+    status: Status.Alive,
+    species: Species.Human,
+    type: '',
+    gender: Gender.Unknown,
+    origin: {name: '', url: ''},
+    location: { name: '', url: '' },
+    image: '',
+    episode: [],
+    url: '',
+    created: ''
+  }
+
+  export const dataEpisode: Episode = {
+    id: 0,
+    name: '',
+    air_date: '',
+    episode: '',
+    characters: [],
+    url: '',
+    created: ''
+  }

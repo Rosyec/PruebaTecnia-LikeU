@@ -1,1 +1,21 @@
-<p>episodes works!</p>
+<div class="container">
+  <div *ngIf="episode.id !== 0; else noData">
+    <div class="row">
+      <div class="card">
+        <h1>Nombre del episodio: {{ episode.name }}</h1>
+        <h1>Fecha de lanzamiento: {{ episode.air_date }}</h1>
+        <h1>Episodio: {{ episode.episode }}</h1>
+        <div class="row">
+          <h3 *ngFor="let character of characters">
+            Personaje: {{ character.name }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <div class="content">
+      <span class="loader"></span>
+    </div>
+  </ng-template>
+</div>
