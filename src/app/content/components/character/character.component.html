@@ -1,10 +1,10 @@
 <div class="container text-center">
   <div *ngIf="character.id !== 0; else noData">
     <div class="row">
-      <div class="col-8">
+      <div class="col">
         <div class="card">
           <img class="card-img-top" [src]="character.image" alt="image" />
-          <h3>Información</h3>
+          <h3>Información y Episodios</h3>
           <div class="table-responsive">
             <table class="table">
               <thead>
@@ -28,14 +28,9 @@
             </table>
           </div>
           <div class="episodes">
-            <ul class="list-group">
-              <li
-                class="list-group-item"
-                *ngFor="let episode of character.episode"
-              >
+              <span *ngFor="let episode of character.episode">
                 <a (click)="onClickEpisode(episode)"> {{ episode }} </a>
-              </li>
-            </ul>
+              </span>
           </div>
         </div>
       </div>

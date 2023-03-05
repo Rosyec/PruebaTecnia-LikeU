@@ -1,14 +1,12 @@
-<div class="container">
+<div class="container text-center">
   <div *ngIf="episode.id !== 0; else noData">
     <div class="row">
       <div class="card">
-        <h1>Nombre del episodio: {{ episode.name }}</h1>
-        <h1>Fecha de lanzamiento: {{ episode.air_date }}</h1>
-        <h1>Episodio: {{ episode.episode }}</h1>
-        <div class="row">
-          <h3 *ngFor="let character of characters">
-            Personaje: {{ character.name }}
-          </h3>
+        <h1>{{ episode.name }}</h1>
+        <h3>{{ episode.air_date }}</h3>
+        <h5>Episodio: {{ episode.episode }}</h5>
+        <div class="characters">
+          <img alt="image" *ngFor="let character of characters" [src]="character.image"/>
         </div>
       </div>
     </div>

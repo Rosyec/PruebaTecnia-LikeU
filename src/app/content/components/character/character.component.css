@@ -1,6 +1,9 @@
 .container {
   min-height: 100vh;
-  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
 }
 
 .row {
@@ -9,22 +12,46 @@
   align-items: center;
 }
 
+.card {
+  width: 500px;
+  border: none;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
 ul {
   list-style: none;
 }
 
 .episodes {
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 2em;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 h3 {
   margin-top: 1em;
+  font-family: RobotoBold;
 }
 
-a {
+span {
+  font-family: RobotoThin;
   cursor: pointer;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px 999px 999px 999px;
+  background-color: rgb(194, 248, 199);
+  
+}
+
+span:hover {
+  box-shadow: 0px 9px 16px -4px rgba(0,0,0,0.1);
+  background-color: rgb(171, 248, 171);
 }
 
 .loader {
@@ -44,5 +71,11 @@ a {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .card {
+    width: 300px;
   }
 }
