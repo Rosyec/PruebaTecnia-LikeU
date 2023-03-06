@@ -4,7 +4,7 @@ import { map, switchMap } from 'rxjs';
 import {
   dataEpisode,
   Episode,
-  Result,
+  Character,
 } from '../../helpers/interfaces/data.interface';
 import { ApiService } from '../../services/api.service';
 
@@ -14,18 +14,34 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./episodes.component.css'],
 })
 export class EpisodesComponent implements OnInit {
+  /**
+   * * Objeto de tipo Episode que contiene todas las 
+   * * propiedades básicas del episodio.
+   */
   public episode: Episode = dataEpisode;
-  public characters: Result[] = [];
-
+  /**
+   * * Arreglo de tipo Character que contiene las 
+   * * propiedades básicas de un personaje.
+   */
+  public characters: Character[] = [];
+  /**
+   * * Importa el ActivatedRouted para obtener el param query. 
+   * * Importa el ApiService para las peticiones http.
+   */
   constructor(
     private activatedRoute: ActivatedRoute,
     private service: ApiService
   ) {}
-
+  /**
+   * * Llama a la función que obtiene el episodio 
+   * * una vez se inicializa el componente.
+   */
   ngOnInit(): void {
     this.getEpisode();
   }
-
+  /**
+   * * Obtiene el episodio y todos los personajes asociados al mismo
+   */
   getEpisode() {
     this.activatedRoute.params
       .pipe(

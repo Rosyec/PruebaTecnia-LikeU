@@ -1,6 +1,6 @@
 export interface Data {
     info:    Info;
-    results: Result[];
+    results: Character[];
 }
 
 export interface Info {
@@ -10,7 +10,7 @@ export interface Info {
     prev:  null;
 }
 
-export interface Result {
+export interface Character {
     id:       number;
     name:     string;
     status:   Status;
@@ -56,7 +56,7 @@ export interface Episode {
     created:    string;
 }
 
-export const dataCharacter: Result = {
+export const dataCharacter: Character = {
     id: 0,
     name: '',
     status: Status.Alive,
