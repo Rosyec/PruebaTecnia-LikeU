@@ -11,8 +11,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  public getAllCharacters( page?: number ) {
-    return this.http.get<Data>(`${this.URL}/character?page=${ page }`);
+  public getAllCharacters(page?: number) {
+    return this.http.get<Data>(`${this.URL}/character?page=${page}`);
   }
 
   getCharacterById(id: number) {

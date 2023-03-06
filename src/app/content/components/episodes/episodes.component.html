@@ -1,7 +1,7 @@
 <div class="container text-center">
   <div *ngIf="episode.id !== 0; else noData">
     <div class="row">
-      <div class="card">
+      <div class="card animate__animated animate__fadeIn">
         <h1>{{ episode.name }}</h1>
         <h3>{{ episode.air_date }}</h3>
         <h5>Episodio: {{ episode.episode }}</h5>

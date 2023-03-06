@@ -2,9 +2,9 @@
   <div *ngIf="character.id !== 0; else noData">
     <div class="row">
       <div class="col">
-        <div class="card">
+        <div class="card animate__animated animate__fadeIn">
           <img class="card-img-top" [src]="character.image" alt="image" />
-          <h3>Información y Episodios</h3>
+          <h1>Información y Episodios</h1>
           <div class="table-responsive">
             <table class="table">
               <thead>
@@ -28,9 +28,12 @@
             </table>
           </div>
           <div class="episodes">
-              <span *ngFor="let episode of character.episode">
-                <a (click)="onClickEpisode(episode)"> {{ episode }} </a>
-              </span>
+            <span
+              *ngFor="let episode of character.episode"
+              (click)="onClickEpisode(episode)"
+            >
+              <a> {{ episode }} </a>
+            </span>
           </div>
         </div>
       </div>

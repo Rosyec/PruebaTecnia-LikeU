@@ -2,7 +2,7 @@
   <div *ngIf="characters; else noData">
     <div class="row d-flex justify-content-center">
       <div class="col-md-2 m-2" *ngFor="let actual of characters">
-        <div class="card" (click)="viewInfo(actual.id)">
+        <div class="card animate__animated animate__fadeIn" (click)="viewInfo(actual.id)">
           <img class="card-img-top" [src]="actual.image" alt="image" />
           <span> {{ actual.name }} </span>
         </div>
@@ -12,7 +12,7 @@
     <div class="col d-flex justify-content-center my-2">
       <a (click)="onPrev()"><i class="bi bi-caret-left-fill"></i></a>
       <div class="pagination">
-        <span>Pagina {{ current }} </span>
+        <span>Página {{ current }} </span>
         &nbsp;
         <span> de {{ end }} </span>
       </div>
